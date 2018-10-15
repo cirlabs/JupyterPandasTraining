@@ -33,14 +33,64 @@ print("Run the program many times until it doesn't crash.")
 - Errors are good now.
   - Read from the bottom up
   - Look for things that are your fault
-- What are modules?
 - Jupyter
 - spaces and punctuation -- what do they mean?
 - variables and data types
+
+my_name = 'Mike'
+my_age = 38
+my_license_plate = 'DWZ 147'
+
+- operators
+addition vs. concatenation
+2 + 2
+'Hello' + 'world'
+'2' + '2'
+
+= vs. ==
+2 + 2 == 4
+2 + 2 == 5
+2 + 2 != 5
+
+- conditionals
+
+my_num = 2
+if my_num == 6:
+    print('Yes, it does.')
+
+else:
+    print('No, that would make no sense.')
+
 - iterables
+my_list_of_nums = [2, 3, 1, 7, 894]
+my_list_of_dog_names = ['Reggie', 'Sadie', 'Charlotte']
+
 - loops
+for thingy in my_list_of_nums:
+    print(thingy)
+
+for thingy in my_list_of_dog_names:
+    print(thingy)
+
+total = 0
+for thingy in my_list_of_nums:
+   total += thingy
+total
+
 - Functions and methods
-- Pandas
+
+A function is a little factory: You put raw materials in, do some work, and something comes out.
+
+def my_factory(first_ingredient, second_ingredient):
+  final_product = first_ingredient + second_ingredient
+  return final_product
+
+my_factory(2, 2)
+my_factory(7, 3)
+
+- Pandas/what are modules
+import pandas as pd
+
 - Read a CSV
 - Join/Merge
 - Group by
