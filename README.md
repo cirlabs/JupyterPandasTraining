@@ -135,7 +135,9 @@ exec "$SHELL"
 pyenv virtualenv 3.7.0 jupyterpandas
 mkdir ~/Documents/Reveal
 cd ~/Documents/Reveal/
-git clone git@github.com:cirlabs/JupyterPandasTraining.git
+git config --global user.name "Human readable name"
+git config --global user.email "email@email.com"
+git clone https://github.com/cirlabs/JupyterPandasTraining.git
 cd JupyterPandasTraining
 pip install -r requirements.txt
 ```
