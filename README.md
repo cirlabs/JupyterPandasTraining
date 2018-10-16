@@ -120,21 +120,32 @@ We have installed several software packages in order to conduct the training and
 
 
 ```bash
+# First, test to see what might already be installed
+brew install  # If it doesn't say "command not found" brew might already be installed
+pip install  # If it doesn't say "command not found" pip might already be installed
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
+
 brew install pip  # Not sure if this will cover the pyenv pip or not -- we'll find out!
+# Or, if brew install pip doesn't work...
+brew install python # Don't do this if brew install pip worked.
+
 brew install pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 exec "$SHELL"
+# (Open new Terminal tab)
 pyenv install 3.7.0
 brew install pyenv-virtualenv
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 exec "$SHELL"
+# (Open new Terminal tab)
 pyenv virtualenv 3.7.0 jupyterpandas
 mkdir ~/Documents/Reveal
 cd ~/Documents/Reveal/
+# (Sign up for github account if you dont' have one.)
 git config --global user.name "Human readable name"
 git config --global user.email "email@email.com"
 git clone https://github.com/cirlabs/JupyterPandasTraining.git
